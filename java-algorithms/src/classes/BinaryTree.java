@@ -47,6 +47,38 @@ public class BinaryTree {
     }
 
     /**
+     * Finds the lowest level in the array (which
+     * represents a binary tree) with the maximum
+     * sum of all the nodes in that level.
+     * @param array Standard array representing a
+     *              binary tree
+     * @return      Level with highest sum {0, 1, 2, ...}
+     */
+    public static int minLevelMaxSum(int[] array) {
+        int max = array[0];
+        int maxLevel = 0;
+        int sum = 0;
+        int level = 0;
+        int levelSize = (int) Math.pow(2, level);
+        int i = 0;
+        while (i < array.length) {
+            for (int j = 0; j < levelSize; j++) {
+                sum += array[i];
+                i++;
+                if (i >= array.length) break;
+            }
+            if (sum >= max) {
+                max = sum;
+                maxLevel = level;
+            }
+            sum = 0;
+            level++;
+            levelSize = (int) Math.pow(2, level);
+        }
+        return maxLevel;
+    }
+
+    /**
      * Gets the level in binary tree that contains the
      * element based on the array index.
      * @param index
@@ -58,7 +90,7 @@ public class BinaryTree {
         while (((index + 1) & index) != 0) {
             index--;
         }
-        return expOfBase2ForResult(index + 1);
+        return getExponent(2, index + 1);
     }
 
 
@@ -79,7 +111,7 @@ public class BinaryTree {
 
     private int levelCount() {
         int nodeCount = nodeCount(root, 0);
-        return expOfBase2ForResult(nodeCount + 1);
+        return getExponent(2, nodeCount + 1);
     }
 
     private int nodeCount(BinaryNode root, int count) {
@@ -91,14 +123,19 @@ public class BinaryTree {
         return count;
     }
 
-    private static int expOfBase2ForResult(int num) {
-        if (num < 2) return 0;
-        int count = 1;
-        while (num != 2) {
-            num /= 2;
-            count++;
-        }
-        return count;
+    /**
+     * Returns the exponent that is applied to
+     * base {base} to yield the result {result}.
+     * For example:
+     * base = 2
+     * result = 8
+     * 2^n = 8 => n = 3
+     * @param base      The power base
+     * @param result    The power result
+     * @return          The power exponent
+     */
+    private static int getExponent(int base, int result) {
+        return (int) (Math.log(result)/Math.log(base));
     }
 
 }
