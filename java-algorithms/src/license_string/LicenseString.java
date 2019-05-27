@@ -1,6 +1,6 @@
 package license_string;
 
-public class Solution {
+public class LicenseString {
 
     public String solution(String S, int K) {
         // Removes all dashes currently in the string.

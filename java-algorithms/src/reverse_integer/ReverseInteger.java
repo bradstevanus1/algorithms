@@ -3,7 +3,8 @@ package reverse_integer;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Solution {
+@SuppressWarnings("Duplicates")
+public class ReverseInteger {
 
     public int reverse(int x) {
         ArrayList<Integer> digits = toDigitList(x);

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 @SuppressWarnings("Duplicates")
-public class Solution {
+public class PalindromeNumber {
 
     public boolean isPalindrome(int x) {
         ArrayList<Integer> reversedDigits = toDigitList(x);
@@ -50,5 +50,15 @@ public class Solution {
         return result.toString();
     }
 
+    public boolean isPalindromeSimple(int x) {
+        String s = Integer.toString(x);
+        int halfSize = (int) Math.floor(s.length());
+        for (int i = 0; i < halfSize; i++) {
+            if (s.charAt(i) != s.charAt(s.length() - 1 - i)) {
+                return false;
+            }
+        }
+        return true;
+    }
 
 }

@@ -1,6 +1,6 @@
 package keyboard;
 
-public class Solution {
+public class Keyboard {
 
     public int solution(String S1, String S2) {
         int newIndex = 0;

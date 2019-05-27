@@ -1,13 +1,13 @@
-package classes;
+package binary_tree;
 
-public class BinaryNode {
+public class Node {
 
     int level;
     int data;
-    BinaryNode left;
-    BinaryNode right;
+    Node left;
+    Node right;
 
-    BinaryNode(int data, int level) {
+    Node(int data, int level) {
         this.level = level;
         this.data = data;
         left = null;
