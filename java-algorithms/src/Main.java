@@ -1,3 +1,5 @@
+import add_two_numbers.AddTwoNumbers;
+import add_two_numbers.ListNode;
 import two_sum.TwoSum;
 
 import java.util.Arrays;
@@ -5,9 +7,10 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) {
-        TwoSum solution = new TwoSum();
-        int[] array = solution.twoSumTwoPass(new int[]{3, 2, 4}, 6);
-        System.out.println(Arrays.toString(array));
+        AddTwoNumbers solution = new AddTwoNumbers();
+        int[] values = {2, 4, 6, 8};
+        ListNode firstNode = AddTwoNumbers.create(values);
+        AddTwoNumbers.printList(firstNode);
     }
 
 }

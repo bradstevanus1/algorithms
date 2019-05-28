@@ -14,6 +14,7 @@
 .idea/**/shelf
 */.idea/workspace.xml
 */.idea/*
+java-algorithms/.idea/workspace.xml
 
 # Generated files
 .idea/**/contentModel.xml
